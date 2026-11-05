@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Skincare coreano selecionado: Medicube, SKIN1004, Celimax e Numbuzin. Monte seu pedido e envie pelo WhatsApp. Enviamos de Belo Horizonte para todo o Brasil.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kskinbr.com.br/">
+<meta property="og:title" content="K Skin · Korean Skincare">
+<meta property="og:description" content="Catálogo 2026 de skincare coreano. Peça pelo WhatsApp, com envio de BH para todo o Brasil.">
+<meta property="og:image" content="https://kskinbr.com.br/img/capa-m.jpg">
+<meta name="theme-color" content="#FEFAF0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%23F7E8B6'/%3E%3Ccircle cx='32' cy='32' r='27' fill='none' stroke='%232B2723' stroke-width='1.5'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-size='34' fill='%232B2723'%3EK%3C/text%3E%3C/svg%3E">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>K Skin Catálogo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&text=%EC%BC%80%EC%9D%B4%EC%8A%A4%ED%82%A8&display=swap">
+<style>
+/* Layout: segue o catálogo 2026. Capa com a foto e o selo K -> boas-vindas com o índice dos 9 passos -> navegação fixa 01-09 -> seções numeradas com produtos em linha (foto à esquerda, VALOR com linha pontilhada) -> rotina sugerida -> calculadora de frete -> como comprar -> rodapé; barra de pedido fixa e painel do pedido com frete */
+:root {
+  --bg: #FEFAF0;
+  --paper: #FFFDF8;
+  --ink: #2B2723;
+  --muted: #756E66;
+  --gold: #A97C2E;
+  --gold-soft: #CFA65A;
+  --line: #E6DDC8;
+  --butter: #F8EEC9;
+  --btn: #2B2723;
+  --btn-hover: #4A443D;
+  --btn-ink: #FEFAF0;
+  --error: #A3412E;
+  --scrim: rgba(43, 39, 35, .45);
+  --shadow: 0 1px 2px rgba(43, 39, 35, .06), 0 14px 34px rgba(43, 39, 35, .14);
+  --logo-bg: #F7E8B6;
+  --logo-ink: #2B2723;
+  --font-display: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+  --font-ko: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+html.lock { overflow: hidden; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 15px; line-height: 1.55;
+  padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 11; background: var(--bg); }
+h1, h2, h3, p, ol, ul, figure, fieldset { margin: 0; }
+fieldset { border: 0; padding: 0; min-width: 0; }
+button, input { font: inherit; color: inherit; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 6px; }
+
+.wrap {
+  max-width: 900px; margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.caps { text-transform: uppercase; letter-spacing: .22em; font-size: 11px; font-weight: 500; }
+.gold { color: var(--gold); }
+.serif { font-family: var(--font-display); font-weight: 400; }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 5vw, 40px); line-height: 1.12; text-wrap: balance; }
+
+/* Selo K */
+.seal {
+  display: grid; place-items: center; border-radius: 50%; background: var(--logo-bg); color: var(--logo-ink);
+  position: relative; flex: none;
+}
+.seal::before { content: ""; position: absolute; inset: 7%; border-radius: 50%; border: 1px solid var(--logo-ink); opacity: .85; }
+.seal b { font-family: var(--font-display); font-weight: 400; line-height: 1; }
+.seal svg { position: absolute; right: 21%; top: 22%; width: 16%; height: 16%; }
+.seal-sm { width: 34px; height: 34px; }
+.seal-sm b { font-size: 19px; }
+.seal-sm::before { border-width: .7px; }
+
+/* Aviso e cabeçalho */
+.notice { background: var(--butter); font-size: 13px; }
+.notice .wrap { padding-block: 8px; max-width: 1160px; }
+.top .wrap { max-width: 1160px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 12px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--muted); }
+.pill-link {
+  display: inline-flex; align-items: center; gap: 7px; height: 38px; padding: 0 16px; border: 1px solid var(--ink);
+  border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 14px; white-space: nowrap; background: transparent;
+}
+.pill-link:hover { background: var(--butter); }
+
+/* Capa */
+.cover { position: relative; }
+.cover-photo { height: clamp(300px, 52vw, 520px); overflow: hidden; background: #6B4A36; }
+.cover-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; }
+.cover-body { display: flex; flex-direction: column; align-items: center; text-align: center; padding-block: 0 56px; }
+.cover-seal { width: 148px; height: 148px; margin-top: -74px; box-shadow: 0 0 0 8px var(--bg); }
+.cover-seal b { font-size: 78px; margin-top: 4px; }
+.cover-seal::before { border-width: 1.2px; }
+h1 { font-family: var(--font-display); font-weight: 300; font-size: clamp(54px, 13vw, 96px); letter-spacing: .1em; line-height: 1; margin-top: 30px; padding-left: .1em; }
+.rule-star { display: flex; align-items: center; gap: 8px; width: min(400px, 100%); margin-top: 22px; color: var(--gold); }
+.rule-star::before, .rule-star::after { content: ""; flex: 1; height: 1px; background: var(--ink); opacity: .55; }
+.sub { letter-spacing: .38em; font-size: clamp(13px, 2.4vw, 17px); margin-top: 14px; padding-left: .38em; text-transform: uppercase; }
+.ko { font-family: var(--font-ko); color: var(--gold); letter-spacing: .32em; font-size: 14px; margin-top: 8px; padding-left: .32em; }
+.short-rule { width: 54px; height: 2px; background: var(--gold-soft); margin-top: 34px; }
+.cover-title { font-family: var(--font-display); font-size: clamp(24px, 4vw, 30px); font-weight: 400; margin-top: 22px; }
+.cover-meta { margin-top: 10px; color: var(--muted); }
+
+/* Boas-vindas e índice */
+.welcome { border-top: 1px solid var(--line); }
+.welcome .wrap { padding-block: 56px; display: grid; gap: 18px; }
+.welcome .lede { max-width: 62ch; color: var(--muted); font-size: 16px; }
+.index { list-style: none; padding: 0; margin-top: 14px; border-top: 1px solid var(--line); }
+.index a {
+  display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 2px 14px; align-items: baseline;
+  padding-block: 14px; border-bottom: 1px solid var(--line); text-decoration: none;
+}
+.index a:hover .i-name { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.i-n { font-family: var(--font-display); color: var(--gold); font-size: 15px; }
+.i-name { font-family: var(--font-display); font-size: 20px; }
+.i-tag { color: var(--muted); font-size: 13.5px; grid-column: 2; }
+.i-count { grid-row: 1 / span 2; grid-column: 3; align-self: center; color: var(--muted); }
+@media (min-width: 640px) {
+  .index a { grid-template-columns: 40px 170px minmax(0, 1fr) auto; }
+  .i-tag { grid-column: 3; }
+  .i-count { grid-row: auto; grid-column: 4; }
+}
+.brands { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 34px; margin-top: 26px; color: var(--muted); font-weight: 600; letter-spacing: .26em; }
+
+/* Navegação fixa */
+.steps { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); border-block: 1px solid var(--line); }
+.steps-in { display: flex; gap: 6px; overflow-x: auto; padding-block: 9px; scrollbar-width: none; max-width: 1160px; }
+.steps-in::-webkit-scrollbar { display: none; }
+.chip {
+  flex: none; display: inline-flex; align-items: baseline; gap: 6px; height: 34px; padding: 7px 14px 0;
+  border-radius: 999px; border: 1px solid transparent; text-decoration: none; white-space: nowrap; font-size: 14px;
+}
+.chip .n { font-family: var(--font-display); color: var(--gold); font-size: 13px; }
+.chip:hover { border-color: var(--line); }
+.chip[aria-current="true"] { background: var(--ink); color: var(--btn-ink); }
+.chip[aria-current="true"] .n { color: var(--gold-soft); }
+
+/* Seções de produtos */
+.sec { padding-top: 48px; scroll-margin-top: 60px; }
+.sec-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; padding-bottom: 18px; }
+.sec-title { display: flex; align-items: baseline; gap: 14px; }
+.sec-title .n { font-family: var(--font-display); color: var(--gold); font-size: 17px; }
+.sec-title h2 { font-size: clamp(32px, 5vw, 38px); }
+.sec-tag { color: var(--muted); }
+
+.prod { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 30px; padding-block: 0 22px; margin-bottom: 22px; }
+.ph { width: 100%; max-width: 100%; aspect-ratio: 1 / 1; border-radius: 14px; overflow: hidden; background: var(--paper); border: 1px solid var(--line); }
+.ph img { width: 100%; height: 100%; object-fit: cover; }
+.pinfo { display: flex; flex-direction: column; min-width: 0; border-bottom: 1px solid var(--line); padding-bottom: 14px; }
+.p-brand { color: var(--gold); font-weight: 600; letter-spacing: .24em; font-size: 10.5px; }
+.p-name { font-family: var(--font-display); font-weight: 400; font-size: 22px; line-height: 1.25; margin-top: 6px; text-wrap: balance; }
+.p-vol { color: var(--muted); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; margin-top: 3px; }
+.p-desc { color: var(--muted); font-size: 14px; line-height: 1.6; margin-top: 10px; max-width: 62ch; }
+.p-foot { margin-top: auto; padding-top: 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+.value { flex: 1 1 260px; display: flex; align-items: baseline; gap: 10px; min-width: 0; }
+.value .caps { color: var(--muted); letter-spacing: .2em; font-size: 10.5px; }
+.leader { flex: 1; border-bottom: 1px dashed var(--muted); opacity: .55; transform: translateY(-4px); min-width: 20px; }
+.price { font-family: var(--font-display); font-size: 23px; font-variant-numeric: tabular-nums lining-nums; white-space: nowrap; }
+.act { flex: none; width: 150px; }
+.btn-add {
+  width: 100%; height: 40px; border-radius: 999px; cursor: pointer; border: 1px solid var(--ink);
+  background: transparent; font-weight: 500; font-size: 14px;
+}
+.btn-add:hover { background: var(--butter); }
+.stepper { display: flex; align-items: center; justify-content: space-between; height: 40px; border-radius: 999px; background: var(--btn); color: var(--btn-ink); }
+.stepper button { width: 44px; height: 40px; border: 0; background: transparent; color: inherit; font-size: 19px; line-height: 1; cursor: pointer; border-radius: 999px; }
+.stepper button:hover { background: var(--btn-hover); }
+.stepper output { font-weight: 600; font-variant-numeric: tabular-nums; }
+
+@media (max-width: 600px) {
+  .prod { grid-template-columns: 108px minmax(0, 1fr); gap: 16px; }
+  .ph { border-radius: 10px; }
+  .p-name { font-size: 19px; }
+  .p-desc { font-size: 13.5px; }
+  .p-foot { flex-direction: column; align-items: stretch; gap: 10px; }
+  .value { flex: none; }
+  .price { font-size: 20px; }
+  .act { width: 100%; }
+}
+
+/* Rotina sugerida */
+.routine { margin-top: 40px; background: var(--butter); border-radius: 18px; padding: 28px 24px; }
+.routine-grid { display: grid; gap: 22px; margin-top: 16px; }
+@media (min-width: 700px) { .routine-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; } }
+.routine h3 { font-family: var(--font-display); font-weight: 400; font-size: 23px; }
+.routine p { color: var(--muted); font-size: 14px; margin-top: 6px; }
+.routine .link-btn { margin-top: 10px; }
+.link-btn { background: none; border: 0; padding: 4px 0; cursor: pointer; font-weight: 500; font-size: 14px; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--gold-soft); }
+.link-btn:hover { color: var(--gold); }
+
+/* Frete */
+.ship-sec { padding-block: 64px 8px; scroll-margin-top: 60px; }
+.ship-card { margin-top: 20px; border: 1px solid var(--line); border-radius: 18px; padding: 24px; background: var(--paper); display: grid; gap: 18px; }
+@media (min-width: 760px) { .ship-card { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 32px; align-items: start; } }
+.ship-intro { color: var(--muted); max-width: 52ch; }
+.cep-form { display: flex; flex-direction: column; gap: 6px; }
+.cep-form label { font-weight: 500; font-size: 14px; }
+.cep-row { display: flex; gap: 8px; }
+.cep-row input {
+  flex: 1; min-width: 0; height: 46px; border: 1px solid var(--muted); border-radius: 999px; padding: 0 18px;
+  background: var(--bg); font-size: 16px; letter-spacing: .06em; font-variant-numeric: tabular-nums;
+}
+.cep-row input:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+.cep-help { font-size: 12.5px; color: var(--muted); }
+.cep-err { font-size: 13px; color: var(--error); }
+.btn-dark {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 46px; padding: 0 22px;
+  border-radius: 999px; border: 0; background: var(--btn); color: var(--btn-ink); font-weight: 500; font-size: 15px;
+  text-decoration: none; white-space: nowrap; cursor: pointer;
+}
+.btn-dark:hover { background: var(--btn-hover); }
+.ship-where { font-size: 14px; color: var(--muted); }
+.ship-where strong { color: var(--ink); font-weight: 600; }
+.opts { display: grid; gap: 8px; margin-top: 10px; }
+.opt { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 2px 12px; align-items: center; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; cursor: pointer; background: var(--bg); }
+.opt:has(input:checked) { border-color: var(--ink); }
+.opt input { accent-color: var(--ink); width: 18px; height: 18px; margin: 0; grid-row: span 2; }
+.opt-name { font-weight: 600; font-size: 14.5px; }
+.opt-days { font-size: 13px; color: var(--muted); grid-column: 2; }
+.opt-price { grid-row: 1 / span 2; grid-column: 3; font-family: var(--font-display); font-size: 19px; font-variant-numeric: tabular-nums lining-nums; white-space: nowrap; }
+.free-note { font-size: 13px; color: var(--muted); margin-top: 10px; }
+.ship-empty { color: var(--muted); font-size: 14px; border: 1px dashed var(--line); border-radius: 12px; padding: 16px; }
+
+/* Como comprar */
+.how .wrap { padding-block: 64px; }
+.how-list { list-style: none; padding: 0; margin-top: 24px; display: grid; gap: 22px; }
+@media (min-width: 760px) { .how-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; } }
+.how-list li { display: grid; gap: 6px; border-top: 1px solid var(--ink); padding-top: 14px; }
+.how-list .n { font-family: var(--font-display); color: var(--gold); }
+.how-list h3 { font-family: var(--font-display); font-weight: 400; font-size: 21px; }
+.how-list p { color: var(--muted); font-size: 14.5px; max-width: 36ch; }
+
+/* Rodapé */
+footer { border-top: 1px solid var(--line); }
+.foot-in { display: grid; gap: 26px; justify-items: center; text-align: center; padding-block: 52px 40px; }
+.foot-seal { width: 76px; height: 76px; }
+.foot-seal b { font-size: 40px; margin-top: 2px; }
+.thanks { font-family: var(--font-display); font-size: 24px; font-weight: 400; }
+.phone { font-size: 21px; font-weight: 500; font-variant-numeric: tabular-nums; margin-top: 6px; user-select: all; }
+.contact-act { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 12px; }
+.fine { font-size: 12.5px; color: var(--muted); }
+
+/* Botão flutuante e barra do pedido */
+.fab { position: fixed; z-index: 20; box-shadow: var(--shadow); right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
+.bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: var(--bg); border-top: 1px solid var(--line); box-shadow: var(--shadow); padding-bottom: env(safe-area-inset-bottom, 0px); }
+.bar-in { display: flex; align-items: center; gap: 12px; padding-block: 12px; max-width: 1160px; }
+.bar-sum { flex: 1; min-width: 0; background: none; border: 0; padding: 0; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 1px; }
+.bar-count { font-size: 13px; color: var(--muted); }
+.bar-count u { text-underline-offset: 3px; }
+.bar-total { font-family: var(--font-display); font-size: 21px; font-variant-numeric: tabular-nums lining-nums; }
+
+/* Painel do pedido */
+.overlay { position: fixed; inset: 0; z-index: 30; background: var(--scrim); }
+.sheet {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 31; margin-inline: auto; max-width: 600px;
+  max-height: min(90vh, 860px); overflow-y: auto; background: var(--bg); border-radius: 22px 22px 0 0; box-shadow: var(--shadow);
+  padding-top: 8px; padding-bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  padding-left: max(18px, env(safe-area-inset-left, 0px)); padding-right: max(18px, env(safe-area-inset-right, 0px));
+}
+.sheet-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 10px 6px; }
+.sheet-head h2 { font-size: 28px; }
+.close { flex: none; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); font-size: 20px; line-height: 1; cursor: pointer; }
+.lines { list-style: none; padding: 0; }
+.line { display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: 4px 12px; align-items: center; padding-block: 12px; border-bottom: 1px solid var(--line); }
+.line img { width: 52px; height: 52px; object-fit: cover; border-radius: 8px; grid-row: span 2; }
+.line-name { font-weight: 500; font-size: 14px; line-height: 1.3; }
+.line-sub { font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.mini { display: flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; height: 36px; }
+.mini button { width: 36px; height: 34px; border: 0; background: none; font-size: 18px; cursor: pointer; border-radius: 999px; }
+.mini button:hover { background: var(--butter); }
+.mini output { min-width: 22px; text-align: center; font-weight: 600; font-variant-numeric: tabular-nums; }
+.line-total { grid-column: 3; text-align: right; font-weight: 500; font-variant-numeric: tabular-nums; font-size: 14px; }
+.sheet-ship { padding-block: 18px 4px; display: grid; gap: 10px; }
+.sheet-ship h3 { font-family: var(--font-display); font-weight: 400; font-size: 20px; }
+.sums { display: grid; gap: 6px; padding-top: 16px; margin-top: 12px; border-top: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.sum-row { display: flex; justify-content: space-between; gap: 12px; font-size: 14.5px; color: var(--muted); }
+.sum-row.total { color: var(--ink); font-size: 16px; align-items: baseline; margin-top: 4px; }
+.sum-row.total strong { font-family: var(--font-display); font-weight: 400; font-size: 26px; }
+.sheet-foot { display: flex; flex-direction: column; gap: 10px; padding-top: 14px; }
+.sheet-foot .note { font-size: 13px; color: var(--muted); }
+.sheet-foot .btn-dark { width: 100%; }
+.btn-ghost { height: 40px; border: 0; background: none; color: var(--muted); font-weight: 500; font-size: 14px; cursor: pointer; border-radius: 999px; }
+.btn-ghost:hover { color: var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#capa" aria-label="K Skin, início">
+      <span class="seal seal-sm" aria-hidden="true"><b>K</b></span>
+      <span class="caps">K Skin · Catálogo</span>
+    </a>
+    <a class="pill-link" id="top-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</header>
+
+<section class="cover" id="capa">
+  <div class="cover-photo"><img src="img/capa-m.jpg" alt="Close de um olho fechado com patch de hidrogel transparente sob os cílios" width="1240" height="993"></div>
+  <div class="wrap cover-body">
+    <span class="seal cover-seal" aria-hidden="true"><b>K</b>
+      <svg viewBox="0 0 20 20"><path d="M10 0 C10.8 6.5 13.5 9.2 20 10 C13.5 10.8 10.8 13.5 10 20 C9.2 13.5 6.5 10.8 0 10 C6.5 9.2 9.2 6.5 10 0Z" fill="#B8893A"/></svg>
+    </span>
+    <h1>K SKIN</h1>
+    <div class="rule-star" aria-hidden="true"><svg viewBox="0 0 20 20" width="9" height="9"><path d="M10 0 C10.8 6.5 13.5 9.2 20 10 C13.5 10.8 10.8 13.5 10 20 C9.2 13.5 6.5 10.8 0 10 C6.5 9.2 9.2 6.5 10 0Z" fill="currentColor"/></svg></div>
+    <p class="sub">Korean Skincare</p>
+    <p class="ko" lang="ko">케이스킨</p>
+    <span class="short-rule" aria-hidden="true"></span>
+    <p class="cover-title">Catálogo de produtos</p>
+    <p class="cover-meta caps">Skincare coreano selecionado · 2026</p>
+  </div>
+</section>
+
+<section class="welcome">
+  <div class="wrap">
+    <p class="caps gold">Bem-vinda à K Skin</p>
+    <h2>A rotina coreana, passo a passo.</h2>
+    <p class="lede">Reunimos as marcas mais amadas da K-Beauty, como Medicube, SKIN1004, Celimax e Numbuzin, organizadas na ordem em que entram na sua rotina. Da limpeza à proteção, escolha o que a sua pele pede.</p>
+    <ol class="index" id="index"></ol>
+    <p class="brands caps" aria-label="Marcas"><span>Medicube</span><span>SKIN1004</span><span>Celimax</span><span>Numbuzin</span></p>
+  </div>
+</section>
+
+<nav class="steps" aria-label="Passos da rotina">
+  <div class="wrap steps-in" id="chips"></div>
+</nav>
+
+<main class="wrap" id="catalogo"></main>
+
+<div class="wrap">
+  <section class="routine" aria-labelledby="routine-title">
+    <p class="caps gold" id="routine-title">Rotina sugerida</p>
+    <div class="routine-grid">
+      <div>
+        <h3>Manhã</h3>
+        <p>Limpeza · Tônico · Sérum · Hidratante · Protetor solar</p>
+        <button class="link-btn" type="button" id="kit-btn">Adicionar uma rotina da manhã</button>
+      </div>
+      <div><h3>Noite</h3><p>Limpeza · Tônico · Pads · Sérum · Hidratante</p></div>
+      <div><h3>1 a 2 vezes por semana</h3><p>Máscaras e patches para um cuidado intensivo</p></div>
+    </div>
+  </section>
+</div>
+
+<section class="ship-sec" id="frete">
+  <div class="wrap">
+    <p class="caps gold">Entrega</p>
+    <h2>Calcule o frete</h2>
+    <div class="ship-card">
+      <div>
+        <p class="ship-intro">Enviamos de Belo Horizonte pelos Correios. Digite o seu CEP para ver o valor e o prazo estimados. O frete escolhido entra no total do pedido enviado pelo WhatsApp.</p>
+        <div id="calc-page" style="margin-top:16px"></div>
+      </div>
+      <div id="res-page" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="wrap">
+    <h2>Como comprar</h2>
+    <ol class="how-list">
+      <li><span class="n">01</span><h3>Escolha</h3><p>Toque em “Adicionar” nos produtos que quiser e ajuste as quantidades.</p></li>
+      <li><span class="n">02</span><h3>Calcule o frete</h3><p>Informe o CEP e escolha entre PAC e SEDEX, com envio de Belo Horizonte.</p></li>
+      <li><span class="n">03</span><h3>Envie pelo WhatsApp</h3><p>A mensagem vai pronta, com a lista, o frete e o total. Confirmamos o estoque e o pagamento por lá.</p></li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <span class="seal foot-seal" aria-hidden="true"><b>K</b></span>
+    <p class="thanks">Obrigada por escolher a K SKIN.</p>
+    <div>
+      <p class="caps" style="color:var(--muted)">Atendimento pelo WhatsApp</p>
+      <p class="phone" id="phone"></p>
+      <div class="contact-act">
+        <a class="pill-link" id="foot-wa" href="#" target="_blank" rel="noopener">Abrir conversa</a>
+        <button class="pill-link" id="copy" type="button">Copiar número</button>
+      </div>
+    </div>
+    <p class="fine">Preços sujeitos a alteração sem aviso prévio e à disponibilidade de estoque.</p>
+  </div>
+</footer>
+
+<a class="btn-dark fab" id="fab" href="#" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-8l-5 4v-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+  Falar no WhatsApp
+</a>
+
+<div class="bar" id="bar" hidden>
+  <div class="wrap bar-in">
+    <button class="bar-sum" id="open-order" type="button" aria-haspopup="dialog">
+      <span class="bar-count" id="bar-count"></span>
+      <span class="bar-total" id="bar-total"></span>
+    </button>
+    <button class="btn-dark" id="bar-go" type="button">Ver pedido</button>
+  </div>
+</div>
+
+<div class="overlay" id="overlay" hidden></div>
+
+<section class="sheet" id="order" role="dialog" aria-modal="true" aria-labelledby="order-title" hidden>
+  <div class="sheet-head">
+    <h2 id="order-title">Seu pedido</h2>
+    <button class="close" type="button" id="close" aria-label="Fechar">×</button>
+  </div>
+  <ul class="lines" id="lines"></ul>
+  <div class="sheet-ship">
+    <h3>Frete</h3>
+    <div id="calc-sheet"></div>
+    <div id="res-sheet" aria-live="polite"></div>
+  </div>
+  <div class="sums">
+    <div class="sum-row"><span>Produtos</span><span id="sum-sub"></span></div>
+    <div class="sum-row"><span>Frete</span><span id="sum-ship"></span></div>
+    <div class="sum-row total"><span>Total</span><strong id="sum-total"></strong></div>
+  </div>
+  <div class="sheet-foot">
+    <p class="note">O frete é uma estimativa e confirmamos o valor exato na conversa, junto com a forma de pagamento.</p>
+    <a class="btn-dark" id="order-send" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-8l-5 4v-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      Enviar pedido pelo WhatsApp
+    </a>
+    <button class="btn-ghost" id="clear" type="button">Esvaziar pedido</button>
+  </div>
+</section>
+
+<script>
+/* ===== Edite aqui ===== */
+// Número do WhatsApp: 55 + DDD + número, só dígitos
+const WHATSAPP = "5531975632275";
+const MSG_GERAL = "Olá! Vi o catálogo da K Skin e tenho uma dúvida.";
+
+// Frete estimado pelos Correios saindo de Belo Horizonte (MG), pacote pequeno. Prazo em dias úteis.
+// eco = PAC, exp = SEDEX
+const ORIGEM_UF = "MG";
+const FRETE = {
+  local:        { eco: [19.90, "3 a 6"],  exp: [26.90, "1 a 2"] },  // dentro de Minas Gerais
+  sudeste:      { eco: [23.90, "4 a 8"],  exp: [36.90, "1 a 3"] },
+  sul:          { eco: [29.90, "6 a 10"], exp: [52.90, "2 a 4"] },
+  centrooeste:  { eco: [29.90, "6 a 10"], exp: [54.90, "2 a 4"] },
+  nordeste:     { eco: [34.90, "7 a 12"], exp: [64.90, "2 a 5"] },
+  norte:        { eco: [44.90, "9 a 15"], exp: [89.90, "3 a 7"] }
+};
+// Frete econômico grátis a partir deste valor em produtos (0 = desligado)
+const FRETE_GRATIS_ACIMA = 0;
+
+const SECTIONS = [
+  { id: "limpeza",    n: "01", name: "Limpeza",        tag: "O primeiro passo de toda rotina" },
+  { id: "tonico",     n: "02", name: "Tônico",         tag: "Equilíbrio logo após a limpeza" },
+  { id: "pads",       n: "03", name: "Pads",           tag: "Tratamento prático em discos" },
+  { id: "seruns",     n: "04", name: "Séruns",         tag: "Ativos concentrados para cada objetivo" },
+  { id: "hidratantes",n: "05", name: "Hidratantes",    tag: "Nutrição e barreira protegida" },
+  { id: "protetor",   n: "06", name: "Protetor solar", tag: "Proteção diária, todos os dias" },
+  { id: "mascaras",   n: "07", name: "Máscaras",       tag: "Tratamentos intensivos semanais" },
+  { id: "patches",    n: "08", name: "Patches",        tag: "Cuidado direcionado para os olhos" },
+  { id: "aparelhos",  n: "09", name: "Aparelhos",      tag: "Tecnologia de clínica em casa" }
+];
+
+const PRODUCTS = [
+  { id: "centella-foam", sec: "limpeza", brand: "SKIN1004", name: "Centella Ampoule Foam", vol: "125 ml", price: 157,
+    desc: "Espuma de limpeza da rotina de dupla limpeza coreana, com 32,8% de extrato de Centella Asiática de Madagascar. Remove poluição, maquiagem e oleosidade dos poros mantendo o pH ideal da pele (5,5): não repuxa nem resseca." },
+  { id: "centella-toner", sec: "tonico", brand: "SKIN1004", name: "Centella Toning Toner", vol: "210 ml", price: 255,
+    desc: "Tônico hipoalergênico com 84% de extrato de Centella Asiática. Equilibra a pele após a limpeza com dupla ação: acalma profundamente e faz uma esfoliação química suave, ideal para retexturizar peles sensíveis." },
+  { id: "vita-c-pad", sec: "pads", brand: "Medicube", name: "Deep Vita C Pad", vol: "70 pads · 150 g", price: 199,
+    desc: "Discos tonificantes focados em clareamento de manchas, redução de hiperpigmentação (como marcas de acne e melasma) e uniformização do tom da pele." },
+  { id: "pdrn-gel-pad", sec: "pads", brand: "Medicube", name: "PDRN Pink Collagen Toning Gel Pad", vol: "120 ml", price: 140,
+    desc: "Tecnologia das clínicas de estética coreanas na rotina em casa. Com PDRN (DNA de salmão), ativo premium que atua na regeneração celular, na firmeza e no clareamento da pele." },
+  { id: "retinal-shot", sec: "seruns", brand: "Celimax", name: "Retinal Shot Tightening Booster", vol: "15 ml", price: 144,
+    desc: "Sérum de alta potência com Retinal (retinaldeído) a 0,1% para rugas, linhas finas, perda de firmeza e poros dilatados. Por estar a um passo do ácido retinoico, age até 10 vezes mais rápido que o retinol tradicional." },
+  { id: "vita-c-capsule-serum", sec: "seruns", brand: "Medicube", name: "Deep Vita C Capsule Serum", vol: "30 ml", price: 176,
+    desc: "Sérum de alta potência contra opacidade, tom irregular, textura áspera e manchas escuras (como melasma e marcas de acne). Entrega viço radiante e textura refinada." },
+  { id: "collagen-glow-serum", sec: "seruns", brand: "Medicube", name: "Collagen Glow Booster Serum", vol: "15 ml", price: 155,
+    desc: "Sérum de textura leitosa (milk serum) que devolve firmeza, densidade e brilho à pele cansada. Embalagem compacta estilo caneta, com botão dosador giratório." },
+  { id: "centella-ampoule", sec: "seruns", brand: "SKIN1004", name: "Centella Ampoule", vol: "30 ml", price: 135,
+    desc: "O produto-assinatura e mais vendido da marca. Ampola minimalista e hipoalergênica com 100% de extrato puro de Centella Asiática, colhida de forma sustentável em Madagascar." },
+  { id: "collagen-jelly-cream", sec: "hidratantes", brand: "Medicube", name: "Collagen Jelly Cream", vol: "110 ml", price: 221,
+    desc: "Hidratante de alta performance com textura em gelatina transparente. Formulado para firmeza, elasticidade e o famoso efeito “pele de vidro” (Korean glass skin)." },
+  { id: "vita-c-capsule-cream", sec: "hidratantes", brand: "Medicube", name: "Deep Vita C Capsule Cream", vol: "55 g", price: 192,
+    desc: "Hidratante intensivo para clareamento de manchas, luminosidade e ação antioxidante. Textura dupla: gel translúcido com cápsulas douradas concentradas." },
+  { id: "zero-pore-cream", sec: "hidratantes", brand: "Medicube", name: "Zero Pore Cream 2.0", vol: "50 ml", price: 199,
+    desc: "Hidratante leve para peles mistas a oleosas com poros dilatados, cravos e brilho excessivo. Hidrata sem pesar, regula a oleosidade e refina a textura da pele." },
+  { id: "centella-cream", sec: "hidratantes", brand: "SKIN1004", name: "Centella Cream", vol: "75 ml", price: 184,
+    desc: "Um dos hidratantes K-Beauty mais famosos do mundo, com Centella Asiática de Madagascar. Acalma inflamações, reidrata peles secas ou descamativas e restaura a barreira de proteção." },
+  { id: "air-fit-sun-plus", sec: "protetor", brand: "SKIN1004", name: "Centella Air-Fit Sun Plus SPF 50+", vol: "50 ml", price: 168,
+    desc: "Alta proteção contra raios UVA e UVB pensada para peles extremamente sensíveis, reativas ou com tendência a acne. Um marco da K-Beauty." },
+  { id: "air-fit-light", sec: "protetor", brand: "SKIN1004", name: "Centella Air-Fit Suncream Light SPF 30", vol: "50 ml", price: 184,
+    desc: "Versão para o dia a dia urbano da linha de protetores minerais da marca: fórmula ainda mais fluida, confortável e invisível, ideal para o escritório e a cidade." },
+  { id: "numbuzin-no9-mask", sec: "mascaras", brand: "Numbuzin", name: "No.9 NAD+ Bio Lifting-Sil Full Face Mask", vol: "20 ml", price: 192,
+    desc: "Máscara de tecido apelidada na Coreia de “plástica em casa”. Atua em flacidez, contorno facial, inchaço e rugas com um sistema de duas partes e faixa de compressão." },
+  { id: "zero-pore-mud-mask", sec: "mascaras", brand: "Medicube", name: "Zero Pore Blackhead Mud Mask", vol: "100 g", price: 163,
+    desc: "Máscara de argila que purifica os poros e elimina cravos de forma rápida e profunda. Diferencial: secagem ultrarrápida, em apenas 3 a 5 minutos." },
+  { id: "numbuzin-eye-patches", sec: "patches", brand: "Numbuzin", name: "No.9 NAD+ Collagen Under Eye Patches", vol: "8 g", price: 159,
+    desc: "Patches de hidrogel da linha premium antienvelhecimento No.9. Tratamento concentrado para a área dos olhos que age contra linhas finas, bolsas, flacidez e olheiras." },
+  { id: "age-r-booster-pro", sec: "aparelhos", brand: "Medicube", name: "Age-R Booster Pro", vol: "Black", price: 1120,
+    desc: "O aparelho de beleza mais avançado da K-Beauty para uso em casa. Seis funções em um: melhora o viço, reduz poros, combate a flacidez e aumenta a absorção dos cosméticos em até 785%." },
+  { id: "age-r-mini", sec: "aparelhos", brand: "Medicube", name: "Age-R Mini", vol: "Portátil", price: 480,
+    desc: "Aparelho portátil que combina eletroporação e terapia de LED para potencializar a absorção de séruns, cremes e ampolas em até 5 a 7 vezes." }
+];
+
+// Rotina da manhã (botão na rotina sugerida)
+const KIT = ["centella-foam", "centella-toner", "centella-ampoule", "centella-cream", "air-fit-sun-plus"];
+/* ===== Fim da edição ===== */
+
+const fmt = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
+const brl = v => fmt.format(v);
+const byId = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const img = p => "img/" + p.id + ".jpg";
+const waLink = t => "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(t);
+function formatPhone(n) {
+  if (n.startsWith("55") && n.length === 13) return "+55 (" + n.slice(2, 4) + ") " + n.slice(4, 9) + "-" + n.slice(9);
+  if (n.startsWith("55") && n.length === 12) return "+55 (" + n.slice(2, 4) + ") " + n.slice(4, 8) + "-" + n.slice(8);
+  return "+" + n;
+}
+
+/* ---------- Índice, navegação e seções ---------- */
+const countIn = id => PRODUCTS.filter(p => p.sec === id).length;
+$("index").innerHTML = SECTIONS.map(s => {
+  const c = countIn(s.id);
+  return '<li><a href="#' + s.id + '"><span class="i-n">' + s.n + '</span><span class="i-name">' + s.name + '</span>' +
+    '<span class="i-tag">' + s.tag + '</span><span class="i-count caps">' + c + (c === 1 ? " produto" : " produtos") + "</span></a></li>";
+}).join("");
+$("chips").innerHTML = SECTIONS.map(s =>
+  '<a class="chip" href="#' + s.id + '" data-sec="' + s.id + '"><span class="n">' + s.n + "</span>" + s.name + "</a>").join("");
+
+$("catalogo").innerHTML = SECTIONS.map(s =>
+  '<section class="sec" id="' + s.id + '" aria-labelledby="h-' + s.id + '">' +
+    '<div class="sec-head"><div class="sec-title"><span class="n">' + s.n + '</span><h2 id="h-' + s.id + '">' + s.name + "</h2></div>" +
+    '<p class="sec-tag caps">' + s.tag + "</p></div>" +
+    PRODUCTS.filter(p => p.sec === s.id).map(p =>
+      '<article class="prod" id="card-' + p.id + '">' +
+        '<div class="ph"><img src="' + img(p) + '" alt="' + esc(p.brand + " " + p.name) + '" width="480" height="480" loading="lazy"></div>' +
+        '<div class="pinfo">' +
+          '<p class="p-brand caps">' + esc(p.brand) + "</p>" +
+          '<h3 class="p-name">' + esc(p.name) + "</h3>" +
+          '<p class="p-vol">' + esc(p.vol) + "</p>" +
+          '<p class="p-desc">' + esc(p.desc) + "</p>" +
+          '<div class="p-foot">' +
+            '<div class="value"><span class="caps">Valor</span><span class="leader" aria-hidden="true"></span><span class="price">' + brl(p.price) + "</span></div>" +
+            '<div class="act">' +
+              '<button class="btn-add" type="button" id="add-' + p.id + '" data-act="add" data-id="' + p.id + '">Adicionar</button>' +
+              '<div class="stepper" id="step-' + p.id + '" hidden>' +
+                '<button type="button" data-act="dec" data-id="' + p.id + '" aria-label="Tirar um: ' + esc(p.name) + '">−</button>' +
+                '<output id="qty-' + p.id + '" aria-live="polite">0</output>' +
+                '<button type="button" data-act="inc" data-id="' + p.id + '" aria-label="Mais um: ' + esc(p.name) + '">+</button>' +
+              "</div>" +
+            "</div>" +
+          "</div>" +
+        "</div>" +
+      "</article>").join("") +
+  "</section>").join("");
+
+// Destaca o passo visível na navegação
+try {
+  const seen = new Map();
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => seen.set(e.target.id, e.isIntersecting));
+    const cur = SECTIONS.find(s => seen.get(s.id));
+    document.querySelectorAll("#chips .chip").forEach(c => {
+      const on = !!cur && c.dataset.sec === cur.id;
+      c.setAttribute("aria-current", on ? "true" : "false");
+      if (on && c.scrollIntoView && !c.dataset.vis) { const r = c.parentElement; r.scrollTo({ left: c.offsetLeft - 16, behavior: "smooth" }); }
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  SECTIONS.forEach(s => io.observe($(s.id)));
+} catch (e) {}
+
+/* ---------- Frete ---------- */
+const UF_RANGES = [
+  [1000, 19999, "SP"], [20000, 28999, "RJ"], [29000, 29999, "ES"], [30000, 39999, "MG"],
+  [40000, 48999, "BA"], [49000, 49999, "SE"], [50000, 56999, "PE"], [57000, 57999, "AL"],
+  [58000, 58999, "PB"], [59000, 59999, "RN"], [60000, 63999, "CE"], [64000, 64999, "PI"],
+  [65000, 65999, "MA"], [66000, 68899, "PA"], [68900, 68999, "AP"], [69000, 69299, "AM"],
+  [69300, 69399, "RR"], [69400, 69899, "AM"], [69900, 69999, "AC"], [70000, 72799, "DF"],
+  [72800, 72999, "GO"], [73000, 73699, "DF"], [73700, 76799, "GO"], [76800, 76999, "RO"],
+  [77000, 77999, "TO"], [78000, 78899, "MT"], [79000, 79999, "MS"], [80000, 87999, "PR"],
+  [88000, 89999, "SC"], [90000, 99999, "RS"]
+];
+const UF_NAME = { AC: "Acre", AL: "Alagoas", AP: "Amapá", AM: "Amazonas", BA: "Bahia", CE: "Ceará", DF: "Distrito Federal",
+  ES: "Espírito Santo", GO: "Goiás", MA: "Maranhão", MT: "Mato Grosso", MS: "Mato Grosso do Sul", MG: "Minas Gerais",
+  PA: "Pará", PB: "Paraíba", PR: "Paraná", PE: "Pernambuco", PI: "Piauí", RJ: "Rio de Janeiro", RN: "Rio Grande do Norte",
+  RS: "Rio Grande do Sul", RO: "Rondônia", RR: "Roraima", SC: "Santa Catarina", SP: "São Paulo", SE: "Sergipe", TO: "Tocantins" };
+const REGION = {};
+["SP","RJ","ES","MG"].forEach(u => REGION[u] = "sudeste");
+["PR","SC","RS"].forEach(u => REGION[u] = "sul");
+["DF","GO","MT","MS"].forEach(u => REGION[u] = "centrooeste");
+["BA","SE","PE","AL","PB","RN","CE","PI","MA"].forEach(u => REGION[u] = "nordeste");
+["PA","AP","AM","RR","AC","TO","RO"].forEach(u => REGION[u] = "norte");
+
+function ufFromCep(cep) {
+  const n = parseInt(cep.slice(0, 5), 10);
+  const r = UF_RANGES.find(([a, b]) => n >= a && n <= b);
+  return r ? r[2] : null;
+}
+const fmtCep = d => d.length > 5 ? d.slice(0, 5) + "-" + d.slice(5, 8) : d;
+
+let ship = { cep: "", uf: "", opt: "eco" };
+try { ship = Object.assign(ship, JSON.parse(localStorage.getItem("kskin-frete-v1")) || {}); } catch (e) {}
+if (ship.cep && !ufFromCep(ship.cep)) ship = { cep: "", uf: "", opt: "eco" };
+function saveShip() { try { localStorage.setItem("kskin-frete-v1", JSON.stringify(ship)); } catch (e) {} }
+
+function shipOptions(subtotal) {
+  if (!ship.uf) return null;
+  const t = ship.uf === ORIGEM_UF ? FRETE.local : FRETE[REGION[ship.uf]];
+  const free = FRETE_GRATIS_ACIMA > 0 && subtotal >= FRETE_GRATIS_ACIMA;
+  return [
+    { key: "eco", name: "PAC", price: free ? 0 : t.eco[0], days: t.eco[1] },
+    { key: "exp", name: "SEDEX", price: t.exp[0], days: t.exp[1] }
+  ];
+}
+function chosenShip(subtotal) {
+  const o = shipOptions(subtotal);
+  return o ? (o.find(x => x.key === ship.opt) || o[0]) : null;
+}
+
+function calcForm(k) {
+  return '<form class="cep-form" data-cep-form="' + k + '" novalidate>' +
+    '<label for="cep-' + k + '">CEP de entrega</label>' +
+    '<div class="cep-row"><input id="cep-' + k + '" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" maxlength="9" value="' + fmtCep(ship.cep) + '">' +
+    '<button class="btn-dark" type="submit">Calcular</button></div>' +
+    '<p class="cep-err" id="err-' + k + '" hidden></p>' +
+    '<a class="cep-help" href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank" rel="noopener">Não sei meu CEP</a>' +
+    "</form>";
+}
+$("calc-page").innerHTML = calcForm("page");
+$("calc-sheet").innerHTML = calcForm("sheet");
+
+function renderShip(subtotal) {
+  const o = shipOptions(subtotal);
+  ["page", "sheet"].forEach(k => {
+    const box = $("res-" + k);
+    if (!o) {
+      box.innerHTML = k === "page" ? '<p class="ship-empty">Informe o CEP para ver as opções de entrega.</p>' : "";
+      return;
+    }
+    const cur = chosenShip(subtotal).key;
+    box.innerHTML =
+      '<p class="ship-where">Entrega para <strong>' + fmtCep(ship.cep) + "</strong> · " + UF_NAME[ship.uf] + "</p>" +
+      '<fieldset class="opts"><legend class="caps" style="color:var(--muted);margin-bottom:6px">Escolha a entrega</legend>' +
+      o.map(x =>
+        '<label class="opt"><input type="radio" name="opt-' + k + '" value="' + x.key + '"' + (x.key === cur ? " checked" : "") + ">" +
+        '<span class="opt-name">' + x.name + '</span><span class="opt-days">' + x.days + " dias úteis</span>" +
+        '<span class="opt-price">' + (x.price === 0 ? "Grátis" : brl(x.price)) + "</span></label>").join("") +
+      "</fieldset>" +
+      (FRETE_GRATIS_ACIMA > 0 ? '<p class="free-note">PAC grátis em pedidos a partir de ' + brl(FRETE_GRATIS_ACIMA) + ".</p>" : "") +
+      (k === "page" ? '<p class="free-note">Valores estimados pelos Correios, saindo de Belo Horizonte. O valor exato é confirmado no WhatsApp, e o prazo conta a partir da confirmação do pagamento.</p>' : "");
+  });
+}
+
+document.addEventListener("submit", e => {
+  const f = e.target.closest("[data-cep-form]");
+  if (!f) return;
+  e.preventDefault();
+  const k = f.dataset.cepForm;
+  const d = $("cep-" + k).value.replace(/\D/g, "");
+  const err = $("err-" + k);
+  const uf = d.length === 8 ? ufFromCep(d) : null;
+  if (!uf) {
+    err.textContent = d.length !== 8 ? "Digite os 8 números do CEP." : "Não encontramos esse CEP. Confira os números.";
+    err.hidden = false; $("cep-" + k).focus();
+    return;
+  }
+  err.hidden = true;
+  ship.cep = d; ship.uf = uf;
+  ["page", "sheet"].forEach(x => { $("cep-" + x).value = fmtCep(d); $("err-" + x).hidden = true; });
+  saveShip(); render();
+});
+document.addEventListener("input", e => {
+  if (e.target.id === "cep-page" || e.target.id === "cep-sheet") {
+    const d = e.target.value.replace(/\D/g, "").slice(0, 8);
+    e.target.value = fmtCep(d);
+  }
+});
+document.addEventListener("change", e => {
+  if (e.target.name === "opt-page" || e.target.name === "opt-sheet") { ship.opt = e.target.value; saveShip(); render(); }
+});
+
+/* ---------- Pedido ---------- */
+const KEY = "kskin-pedido-v2";
+let bag = {};
+try { bag = JSON.parse(localStorage.getItem(KEY)) || JSON.parse(localStorage.getItem("kskin-pedido-v1")) || {}; } catch (e) { bag = {}; }
+for (const k of Object.keys(bag)) { if (!byId[k] || !(bag[k] > 0)) delete bag[k]; }
+function save() { try { localStorage.setItem(KEY, JSON.stringify(bag)); } catch (e) {} }
+function setQty(id, q) { q = Math.max(0, Math.min(99, q)); if (q === 0) delete bag[id]; else bag[id] = q; save(); render(); }
+
+function orderText(sub, s) {
+  const lines = PRODUCTS.filter(p => bag[p.id]).map(p =>
+    "• " + bag[p.id] + "x " + p.brand + " " + p.name + " (" + p.vol + ") - " + brl(bag[p.id] * p.price));
+  const shipLine = s
+    ? "Frete " + s.name + " (" + s.days + " dias úteis) para o CEP " + fmtCep(ship.cep) + ": " + (s.price === 0 ? "grátis" : brl(s.price))
+    : "Frete: a combinar";
+  return "Olá! Vi o catálogo da K Skin e quero fazer um pedido:\n\n" + lines.join("\n") +
+    "\n\nProdutos: " + brl(sub) + "\n" + shipLine + "\nTotal: " + brl(sub + (s ? s.price : 0)) +
+    "\n\nPode confirmar se tem em estoque?";
+}
+
+function render() {
+  let count = 0, sub = 0;
+  for (const p of PRODUCTS) {
+    const q = bag[p.id] || 0;
+    $("add-" + p.id).hidden = q > 0;
+    $("step-" + p.id).hidden = q === 0;
+    $("qty-" + p.id).textContent = q;
+    count += q; sub += q * p.price;
+  }
+  const s = chosenShip(sub);
+  const total = sub + (s ? s.price : 0);
+  const has = count > 0;
+  $("bar").hidden = !has; $("fab").hidden = has;
+  $("bar-count").innerHTML = (count === 1 ? "1 item" : count + " itens") + (s ? " + frete" : "") + " · <u>ver pedido</u>";
+  $("bar-total").textContent = brl(total);
+  $("sum-sub").textContent = brl(sub);
+  $("sum-ship").textContent = s ? (s.price === 0 ? "Grátis" : brl(s.price)) : "Informe o CEP";
+  $("sum-total").textContent = brl(total);
+  $("order-send").href = waLink(orderText(sub, s));
+  $("lines").innerHTML = PRODUCTS.filter(p => bag[p.id]).map(p => {
+    const q = bag[p.id];
+    return '<li class="line"><img src="' + img(p) + '" alt="" width="52" height="52">' +
+      '<div><p class="line-name">' + esc(p.name) + '</p><p class="line-sub">' + esc(p.brand) + " · " + brl(p.price) + " cada</p></div>" +
+      '<div class="mini"><button type="button" data-act="dec" data-id="' + p.id + '" aria-label="Tirar um: ' + esc(p.name) + '">−</button>' +
+      "<output>" + q + "</output>" +
+      '<button type="button" data-act="inc" data-id="' + p.id + '" aria-label="Mais um: ' + esc(p.name) + '">+</button></div>' +
+      '<p class="line-total">' + brl(q * p.price) + "</p></li>";
+  }).join("");
+  $("kit-btn").textContent = KIT.every(id => bag[id] > 0) ? "Rotina da manhã já está no pedido" : "Adicionar uma rotina da manhã (" + brl(KIT.reduce((t, id) => t + byId[id].price, 0)) + ")";
+  renderShip(sub);
+  if (!has && !$("order").hidden) closeSheet();
+}
+
+/* ---------- Painel ---------- */
+let lastFocus = null;
+function openSheet() {
+  lastFocus = document.activeElement;
+  $("overlay").hidden = false; $("order").hidden = false; $("order").scrollTop = 0;
+  document.documentElement.classList.add("lock");
+  $("close").focus();
+}
+function closeSheet() {
+  $("overlay").hidden = true; $("order").hidden = true;
+  document.documentElement.classList.remove("lock");
+  resetClear();
+  if (lastFocus && document.contains(lastFocus) && !lastFocus.closest("[hidden]")) lastFocus.focus();
+}
+let clearTimer = null;
+function resetClear() { clearTimeout(clearTimer); $("clear").textContent = "Esvaziar pedido"; $("clear").dataset.armed = ""; }
+
+document.addEventListener("click", e => {
+  const act = e.target.closest("[data-act]");
+  if (!act) return;
+  const id = act.dataset.id, q = bag[id] || 0;
+  const inCard = !!act.closest(".prod");
+  if (act.dataset.act === "add") { setQty(id, 1); $("step-" + id).querySelector('[data-act="inc"]').focus(); }
+  if (act.dataset.act === "inc") setQty(id, q + 1);
+  if (act.dataset.act === "dec") { setQty(id, q - 1); if (q - 1 === 0 && inCard) $("add-" + id).focus(); }
+});
+$("kit-btn").addEventListener("click", () => {
+  if (KIT.every(id => bag[id] > 0)) { openSheet(); return; }
+  KIT.forEach(id => { if (!bag[id]) bag[id] = 1; });
+  save(); render();
+});
+$("open-order").addEventListener("click", openSheet);
+$("bar-go").addEventListener("click", openSheet);
+$("close").addEventListener("click", closeSheet);
+$("overlay").addEventListener("click", closeSheet);
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("overlay").hidden) closeSheet(); });
+$("clear").addEventListener("click", () => {
+  const b = $("clear");
+  if (b.dataset.armed) { bag = {}; save(); render(); resetClear(); return; }
+  b.dataset.armed = "1"; b.textContent = "Toque de novo para esvaziar";
+  clearTimer = setTimeout(resetClear, 3500);
+});
+
+const general = waLink(MSG_GERAL);
+$("top-wa").href = general; $("fab").href = general; $("foot-wa").href = general;
+$("phone").textContent = formatPhone(WHATSAPP);
+$("copy").addEventListener("click", () => {
+  const b = $("copy");
+  const done = t => { b.textContent = t; setTimeout(() => { b.textContent = "Copiar número"; }, 1800); };
+  const fallback = () => {
+    try { const r = document.createRange(); r.selectNodeContents($("phone")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); } catch (e) {}
+    done("Número selecionado");
+  };
+  try { navigator.clipboard.writeText(formatPhone(WHATSAPP)).then(() => done("Copiado"), fallback); } catch (e) { fallback(); }
+});
+
+render();
+</script>
+
+</body>
+</html>
