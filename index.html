@@ -567,20 +567,43 @@ $("catalogo").innerHTML = SECTIONS.map(s =>
       "</article>").join("") +
   "</section>").join("");
 
-// Destaca o passo visível na navegação
-try {
-  const seen = new Map();
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => seen.set(e.target.id, e.isIntersecting));
-    const cur = SECTIONS.find(s => seen.get(s.id));
-    document.querySelectorAll("#chips .chip").forEach(c => {
-      const on = !!cur && c.dataset.sec === cur.id;
-      c.setAttribute("aria-current", on ? "true" : "false");
-      if (on && c.scrollIntoView && !c.dataset.vis) { const r = c.parentElement; r.scrollTo({ left: c.offsetLeft - 16, behavior: "smooth" }); }
-    });
-  }, { rootMargin: "-45% 0px -50% 0px" });
-  SECTIONS.forEach(s => io.observe($(s.id)));
-} catch (e) {}
+// Destaca na navegação o passo que está no topo da tela
+let activeSec = null, lockUntil = 0;
+function markChip(id) {
+  if (id === activeSec) return;
+  activeSec = id;
+  document.querySelectorAll("#chips .chip").forEach(c => {
+    const on = c.dataset.sec === id;
+    c.setAttribute("aria-current", on ? "true" : "false");
+    if (on) { try { c.parentElement.scrollTo({ left: c.offsetLeft - 16, behavior: "smooth" }); } catch (e) {} }
+  });
+}
+function updateActive() {
+  if (Date.now() < lockUntil) return;
+  const nav = document.querySelector(".steps");
+  const line = (nav ? (parseFloat(getComputedStyle(nav).top) || 0) + nav.offsetHeight : 0) + 24;
+  const cat = $("catalogo").getBoundingClientRect();
+  if (cat.top > line || cat.bottom < line) { markChip(null); return; }
+  let cur = SECTIONS[0].id;
+  for (const s of SECTIONS) { if ($(s.id).getBoundingClientRect().top <= line) cur = s.id; }
+  markChip(cur);
+}
+let ticking = false;
+window.addEventListener("scroll", () => {
+  if (ticking) return; ticking = true;
+  requestAnimationFrame(() => { ticking = false; updateActive(); });
+}, { passive: true });
+window.addEventListener("resize", updateActive);
+document.addEventListener("click", e => {
+  const a = e.target.closest('a[href^="#"]');
+  if (!a) return;
+  const id = a.getAttribute("href").slice(1);
+  if (!SECTIONS.some(s => s.id === id)) return;
+  markChip(id);
+  lockUntil = Date.now() + 900;
+  setTimeout(updateActive, 950);
+});
+updateActive();
 
 /* ---------- Frete ---------- */
 const UF_RANGES = [
