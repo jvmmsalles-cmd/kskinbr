@@ -122,7 +122,8 @@ h1 { font-family: var(--font-display); font-weight: 300; font-size: clamp(54px, 
 @media (max-width: 600px) {
   .brands { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); justify-items: center; gap: 18px 12px; font-size: 12.5px; }
 }
-.intro-phrase { display: grid; gap: 18px; justify-items: center; margin-top: 22px; }
+.welcome.outro { border-top: 0; }
+.welcome.outro .wrap { padding-block: 40px 0; text-align: center; justify-items: center; }
 
 /* Navegação fixa */
 .steps { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); border-block: 1px solid var(--line); }
@@ -337,10 +338,6 @@ footer { border-top: 1px solid var(--line); }
       <p class="cover-title">Catálogo de produtos</p>
       <p class="cover-meta caps">Skincare coreano selecionado · 2026</p>
     </div>
-    <div class="intro-phrase">
-      <h2>A rotina coreana, passo a passo.</h2>
-      <p class="lede">Reunimos as marcas mais amadas da K-Beauty, como Medicube, SKIN1004, Celimax e Numbuzin, organizadas na ordem em que entram na sua rotina. Da limpeza à proteção, escolha o que a sua pele pede.</p>
-    </div>
   </div>
 </section>
 
@@ -349,6 +346,13 @@ footer { border-top: 1px solid var(--line); }
 </nav>
 
 <main class="wrap" id="catalogo"></main>
+
+<section class="welcome outro">
+  <div class="wrap">
+    <h2>A rotina coreana, passo a passo.</h2>
+    <p class="lede">Reunimos as marcas mais amadas da K-Beauty, como Medicube, SKIN1004, Celimax e Numbuzin, organizadas na ordem em que entram na sua rotina. Da limpeza à proteção, escolha o que a sua pele pede.</p>
+  </div>
+</section>
 
 <div class="wrap">
   <section class="routine" aria-labelledby="routine-title">
