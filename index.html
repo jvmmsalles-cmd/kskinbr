@@ -116,22 +116,7 @@ h1 { font-family: var(--font-display); font-weight: 300; font-size: clamp(54px, 
 .welcome.intro + .steps { border-top: 0; }
 .intro-cat { display: flex; flex-direction: column; align-items: center; }
 .intro-cat .short-rule { margin-top: 18px; }
-.index { list-style: none; padding: 0; margin-top: 14px; border-top: 1px solid var(--line); }
-.index a {
-  display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 2px 14px; align-items: baseline;
-  padding-block: 14px; border-bottom: 1px solid var(--line); text-decoration: none;
-}
-.index a:hover .i-name { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
-.i-n { font-family: var(--font-display); color: var(--gold); font-size: 15px; }
-.i-name { font-family: var(--font-display); font-size: 20px; }
-.i-tag { color: var(--muted); font-size: 13.5px; grid-column: 2; }
-.i-count { grid-row: 1 / span 2; grid-column: 3; align-self: center; color: var(--muted); }
-@media (min-width: 640px) {
-  .index a { grid-template-columns: 40px 170px minmax(0, 1fr) auto; }
-  .i-tag { grid-column: 3; }
-  .i-count { grid-row: auto; grid-column: 4; }
-}
-.brands { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 34px; margin-top: 26px; color: var(--muted); font-weight: 600; letter-spacing: .26em; }
+.brands { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 34px; margin-top: 56px; color: var(--muted); font-weight: 600; letter-spacing: .26em; }
 
 /* Navegação fixa */
 .steps { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); border-block: 1px solid var(--line); }
@@ -345,12 +330,9 @@ footer { border-top: 1px solid var(--line); }
 
 <main class="wrap" id="catalogo"></main>
 
-<section class="welcome">
-  <div class="wrap">
-    <ol class="index" id="index" style="margin-top:0"></ol>
-    <p class="brands caps" aria-label="Marcas"><span>Medicube</span><span>SKIN1004</span><span>Celimax</span><span>Numbuzin</span></p>
-  </div>
-</section>
+<div class="wrap">
+  <p class="brands caps" aria-label="Marcas"><span>Medicube</span><span>SKIN1004</span><span>Celimax</span><span>Numbuzin</span></p>
+</div>
 
 <div class="wrap">
   <section class="routine" aria-labelledby="routine-title">
@@ -541,13 +523,8 @@ function formatPhone(n) {
   return "+" + n;
 }
 
-/* ---------- Índice, navegação e seções ---------- */
+/* ---------- Navegação e seções ---------- */
 const countIn = id => PRODUCTS.filter(p => p.sec === id).length;
-$("index").innerHTML = SECTIONS.map(s => {
-  const c = countIn(s.id);
-  return '<li><a href="#' + s.id + '"><span class="i-n">' + s.n + '</span><span class="i-name">' + s.name + '</span>' +
-    '<span class="i-tag">' + s.tag + '</span><span class="i-count caps">' + c + (c === 1 ? " produto" : " produtos") + "</span></a></li>";
-}).join("");
 $("chips").innerHTML = SECTIONS.map(s =>
   '<a class="chip" href="#' + s.id + '" data-sec="' + s.id + '"><span class="n">' + s.n + "</span>" + s.name + "</a>").join("");
 
