@@ -117,6 +117,8 @@ h1 { font-family: var(--font-display); font-weight: 300; font-size: clamp(54px, 
 .intro-cat { display: flex; flex-direction: column; align-items: center; }
 .intro-cat .short-rule { margin-top: 18px; }
 .brands { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 34px; margin-top: 6px; color: var(--muted); font-weight: 600; letter-spacing: .26em; }
+.brands button { font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; background: none; border: 0; padding: 4px 0 3px; cursor: pointer; border-bottom: 1px solid var(--gold-soft); }
+.brands button:hover { color: var(--ink); border-bottom-color: var(--gold); }
 .intro-phrase { display: grid; gap: 18px; justify-items: center; margin-top: 22px; }
 
 /* Navegação fixa */
@@ -268,6 +270,16 @@ footer { border-top: 1px solid var(--line); }
 .mini button:hover { background: var(--butter); }
 .mini output { min-width: 22px; text-align: center; font-weight: 600; font-variant-numeric: tabular-nums; }
 .line-total { grid-column: 3; text-align: right; font-weight: 500; font-variant-numeric: tabular-nums; font-size: 14px; }
+.b-eyebrow { color: var(--gold); font-weight: 600; letter-spacing: .24em; font-size: 10.5px; }
+.b-count { color: var(--muted); font-size: 13px; margin-top: 4px; }
+.bline { display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; gap: 2px 12px; align-items: center; padding-block: 12px; border-bottom: 1px solid var(--line); }
+.bline img { width: 64px; height: 64px; object-fit: cover; border-radius: 8px; grid-row: span 3; }
+.bline .line-name { grid-column: 2; }
+.bline .b-vol { grid-column: 2; font-size: 11px; color: var(--muted); letter-spacing: .14em; text-transform: uppercase; }
+.bline .b-price { grid-column: 2; font-family: var(--font-display); font-size: 17px; font-variant-numeric: tabular-nums lining-nums; }
+.bline .b-act { grid-column: 3; grid-row: 1 / span 3; }
+.bline .btn-add { width: auto; height: 36px; padding: 0 16px; font-size: 13.5px; }
+.b-foot { display: grid; gap: 8px; padding-top: 16px; }
 .sheet-ship { padding-block: 18px 4px; display: grid; gap: 10px; }
 .sheet-ship h3 { font-family: var(--font-display); font-weight: 400; font-size: 20px; }
 .sums { display: grid; gap: 6px; padding-top: 16px; margin-top: 12px; border-top: 1px solid var(--line); font-variant-numeric: tabular-nums; }
@@ -316,7 +328,7 @@ footer { border-top: 1px solid var(--line); }
 <section class="welcome intro">
   <div class="wrap">
     <p class="caps gold">Bem-vinda à K Skin</p>
-    <p class="brands caps" aria-label="Marcas"><span>Medicube</span><span>SKIN1004</span><span>Celimax</span><span>Numbuzin</span></p>
+    <p class="brands caps" aria-label="Marcas"><button type="button" data-brand="Medicube">Medicube</button><button type="button" data-brand="SKIN1004">SKIN1004</button><button type="button" data-brand="Celimax">Celimax</button><button type="button" data-brand="Numbuzin">Numbuzin</button></p>
     <div class="intro-cat">
       <span class="short-rule" aria-hidden="true"></span>
       <p class="cover-title">Catálogo de produtos</p>
@@ -407,6 +419,22 @@ footer { border-top: 1px solid var(--line); }
 </div>
 
 <div class="overlay" id="overlay" hidden></div>
+
+<section class="sheet" id="brand" role="dialog" aria-modal="true" aria-labelledby="brand-title" hidden>
+  <div class="sheet-head">
+    <div>
+      <p class="b-eyebrow caps">Marca</p>
+      <h2 id="brand-title"></h2>
+      <p class="b-count" id="brand-count"></p>
+    </div>
+    <button class="close" type="button" id="brand-close" aria-label="Fechar">×</button>
+  </div>
+  <ul class="lines" id="brand-lines"></ul>
+  <div class="b-foot">
+    <button class="btn-dark" type="button" id="brand-order" hidden>Ver pedido</button>
+    <button class="btn-ghost" type="button" id="brand-back">Continuar vendo o catálogo</button>
+  </div>
+</section>
 
 <section class="sheet" id="order" role="dialog" aria-modal="true" aria-labelledby="order-title" hidden>
   <div class="sheet-head">
@@ -754,7 +782,50 @@ function render() {
   $("kit-btn").textContent = KIT.every(id => bag[id] > 0) ? "Rotina da manhã já está no pedido" : "Adicionar uma rotina da manhã (" + brl(KIT.reduce((t, id) => t + byId[id].price, 0)) + ")";
   renderShip(sub);
   if (!has && !$("order").hidden) closeSheet();
+  renderBrand(count, total);
 }
+
+/* ---------- Pop-up da marca ---------- */
+let brandOpen = "";
+function renderBrand(count, total) {
+  if (!brandOpen) return;
+  const list = PRODUCTS.filter(p => p.brand === brandOpen);
+  $("brand-title").textContent = brandOpen;
+  $("brand-count").textContent = list.length + (list.length === 1 ? " produto" : " produtos");
+  $("brand-lines").innerHTML = list.map(p => {
+    const q = bag[p.id] || 0;
+    const ctrl = q === 0
+      ? '<button class="btn-add" type="button" data-act="inc" data-id="' + p.id + '" aria-label="Adicionar: ' + esc(p.name) + '">Adicionar</button>'
+      : '<div class="mini"><button type="button" data-act="dec" data-id="' + p.id + '" aria-label="Tirar um: ' + esc(p.name) + '">−</button>' +
+        "<output>" + q + "</output>" +
+        '<button type="button" data-act="inc" data-id="' + p.id + '" aria-label="Mais um: ' + esc(p.name) + '">+</button></div>';
+    return '<li class="bline"><img src="' + img(p) + '" alt="" width="64" height="64">' +
+      '<p class="line-name">' + esc(p.name) + '</p><p class="b-vol">' + esc(p.vol) + '</p><p class="b-price">' + brl(p.price) + "</p>" +
+      '<div class="b-act">' + ctrl + "</div></li>";
+  }).join("");
+  const ord = $("brand-order");
+  ord.hidden = count === 0;
+  ord.textContent = "Ver pedido (" + (count === 1 ? "1 item" : count + " itens") + " · " + brl(total) + ")";
+}
+function openBrand(name, from) {
+  brandOpen = name; lastFocus = from || document.activeElement;
+  $("overlay").hidden = false; $("brand").hidden = false; $("brand").scrollTop = 0;
+  document.documentElement.classList.add("lock");
+  render();
+  $("brand-close").focus();
+}
+function closeBrand(keepLock) {
+  brandOpen = ""; $("brand").hidden = true;
+  if (!keepLock) {
+    $("overlay").hidden = true;
+    document.documentElement.classList.remove("lock");
+    if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
+  }
+}
+document.querySelectorAll("[data-brand]").forEach(b => b.addEventListener("click", () => openBrand(b.dataset.brand, b)));
+$("brand-close").addEventListener("click", () => closeBrand());
+$("brand-back").addEventListener("click", () => closeBrand());
+$("brand-order").addEventListener("click", () => { const f = lastFocus; closeBrand(true); openSheet(); lastFocus = f; });
 
 /* ---------- Painel ---------- */
 let lastFocus = null;
@@ -790,8 +861,8 @@ $("kit-btn").addEventListener("click", () => {
 $("open-order").addEventListener("click", openSheet);
 $("bar-go").addEventListener("click", openSheet);
 $("close").addEventListener("click", closeSheet);
-$("overlay").addEventListener("click", closeSheet);
-document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("overlay").hidden) closeSheet(); });
+$("overlay").addEventListener("click", () => { if (brandOpen) closeBrand(); else closeSheet(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("overlay").hidden) { if (brandOpen) closeBrand(); else closeSheet(); } });
 $("clear").addEventListener("click", () => {
   const b = $("clear");
   if (b.dataset.armed) { bag = {}; save(); render(); resetClear(); return; }

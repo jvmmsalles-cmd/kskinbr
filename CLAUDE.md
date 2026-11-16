@@ -29,6 +29,8 @@ Quase tudo fica no `<script>` do `index.html`, entre `/* ===== Edite aqui ===== 
 
 Para incluir um produto: adicione-o em `PRODUCTS` e a foto em `img/<id>.jpg`. O índice e a navegação são gerados sozinhos a partir de `SECTIONS` e `PRODUCTS`.
 
+As marcas abaixo de "Bem-vinda à K Skin" são botões no HTML (`data-brand`). Cada um abre uma janela com os produtos daquela marca, buscados em `PRODUCTS` pelo campo `brand`, que precisa ter exatamente o mesmo nome. Para uma marca nova, acrescente um botão igual aos outros.
+
 Textos fixos (capa, boas-vindas, rotina sugerida, frete, "Como comprar", rodapé) ficam no HTML.
 
 ## Identidade visual
