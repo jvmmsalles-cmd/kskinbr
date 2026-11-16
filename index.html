@@ -112,8 +112,8 @@ h1 { font-family: var(--font-display); font-weight: 300; font-size: clamp(54px, 
 .welcome { border-top: 1px solid var(--line); }
 .welcome .wrap { padding-block: 56px; display: grid; gap: 18px; }
 .welcome .lede { max-width: 62ch; color: var(--muted); font-size: 16px; }
-.welcome.intro { border-top: 0; }
-.welcome.intro .wrap { padding-bottom: 0; }
+.welcome.intro .wrap { padding-bottom: 40px; }
+.welcome.intro + .steps { border-top: 0; }
 .index { list-style: none; padding: 0; margin-top: 14px; border-top: 1px solid var(--line); }
 .index a {
   display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 2px 14px; align-items: baseline;
@@ -327,17 +327,6 @@ footer { border-top: 1px solid var(--line); }
   </div>
 </section>
 
-<section class="welcome">
-  <div class="wrap">
-    <ol class="index" id="index" style="margin-top:0"></ol>
-    <p class="brands caps" aria-label="Marcas"><span>Medicube</span><span>SKIN1004</span><span>Celimax</span><span>Numbuzin</span></p>
-  </div>
-</section>
-
-<nav class="steps" aria-label="Passos da rotina">
-  <div class="wrap steps-in" id="chips"></div>
-</nav>
-
 <section class="welcome intro">
   <div class="wrap">
     <p class="caps gold">Bem-vinda à K Skin</p>
@@ -346,7 +335,18 @@ footer { border-top: 1px solid var(--line); }
   </div>
 </section>
 
+<nav class="steps" aria-label="Passos da rotina">
+  <div class="wrap steps-in" id="chips"></div>
+</nav>
+
 <main class="wrap" id="catalogo"></main>
+
+<section class="welcome">
+  <div class="wrap">
+    <ol class="index" id="index" style="margin-top:0"></ol>
+    <p class="brands caps" aria-label="Marcas"><span>Medicube</span><span>SKIN1004</span><span>Celimax</span><span>Numbuzin</span></p>
+  </div>
+</section>
 
 <div class="wrap">
   <section class="routine" aria-labelledby="routine-title">
