@@ -116,9 +116,12 @@ h1 { font-family: var(--font-display); font-weight: 300; font-size: clamp(54px, 
 .welcome.intro + .steps { border-top: 0; }
 .intro-cat { display: flex; flex-direction: column; align-items: center; }
 .intro-cat .short-rule { margin-top: 18px; }
-.brands { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 34px; margin-top: 6px; color: var(--muted); font-weight: 600; letter-spacing: .26em; }
-.brands button { font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; background: none; border: 0; padding: 4px 0 3px; cursor: pointer; border-bottom: 1px solid var(--gold-soft); }
+.brands { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 40px; margin-top: 6px; color: var(--muted); font-weight: 600; letter-spacing: .26em; font-size: 13.5px; }
+.brands button { font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; background: none; border: 0; padding: 4px 0 3px .26em; cursor: pointer; border-bottom: 1px solid var(--gold-soft); }
 .brands button:hover { color: var(--ink); border-bottom-color: var(--gold); }
+@media (max-width: 600px) {
+  .brands { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); justify-items: center; gap: 18px 12px; font-size: 12.5px; }
+}
 .intro-phrase { display: grid; gap: 18px; justify-items: center; margin-top: 22px; }
 
 /* Navegação fixa */
