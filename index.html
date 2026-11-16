@@ -116,7 +116,8 @@ h1 { font-family: var(--font-display); font-weight: 300; font-size: clamp(54px, 
 .welcome.intro + .steps { border-top: 0; }
 .intro-cat { display: flex; flex-direction: column; align-items: center; }
 .intro-cat .short-rule { margin-top: 18px; }
-.brands { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 34px; margin-top: 56px; color: var(--muted); font-weight: 600; letter-spacing: .26em; }
+.brands { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 34px; margin-top: 6px; color: var(--muted); font-weight: 600; letter-spacing: .26em; }
+.intro-phrase { display: grid; gap: 18px; justify-items: center; margin-top: 22px; }
 
 /* Navegação fixa */
 .steps { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); border-block: 1px solid var(--line); }
@@ -314,12 +315,15 @@ footer { border-top: 1px solid var(--line); }
 <section class="welcome intro">
   <div class="wrap">
     <p class="caps gold">Bem-vinda à K Skin</p>
-    <h2>A rotina coreana, passo a passo.</h2>
-    <p class="lede">Reunimos as marcas mais amadas da K-Beauty, como Medicube, SKIN1004, Celimax e Numbuzin, organizadas na ordem em que entram na sua rotina. Da limpeza à proteção, escolha o que a sua pele pede.</p>
+    <p class="brands caps" aria-label="Marcas"><span>Medicube</span><span>SKIN1004</span><span>Celimax</span><span>Numbuzin</span></p>
     <div class="intro-cat">
       <span class="short-rule" aria-hidden="true"></span>
       <p class="cover-title">Catálogo de produtos</p>
       <p class="cover-meta caps">Skincare coreano selecionado · 2026</p>
+    </div>
+    <div class="intro-phrase">
+      <h2>A rotina coreana, passo a passo.</h2>
+      <p class="lede">Reunimos as marcas mais amadas da K-Beauty, como Medicube, SKIN1004, Celimax e Numbuzin, organizadas na ordem em que entram na sua rotina. Da limpeza à proteção, escolha o que a sua pele pede.</p>
     </div>
   </div>
 </section>
@@ -329,10 +333,6 @@ footer { border-top: 1px solid var(--line); }
 </nav>
 
 <main class="wrap" id="catalogo"></main>
-
-<div class="wrap">
-  <p class="brands caps" aria-label="Marcas"><span>Medicube</span><span>SKIN1004</span><span>Celimax</span><span>Numbuzin</span></p>
-</div>
 
 <div class="wrap">
   <section class="routine" aria-labelledby="routine-title">
